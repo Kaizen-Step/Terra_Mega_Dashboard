@@ -21,6 +21,6 @@ with open('style.css')as f:
 
 # Aknowledgement
 st.write("""
-We are grateful to all who help us develop this project specially ****Mr. Ali Taslimi**** (twitter: @AliTslm ) with comprehensive streamlit open source project that provide streamlit functions and tools.
-And also ****Flipside Crypto**** with massive database and at last ****MetricsDao**** that is reason behind this project.
+We are grateful to all who helped us develop this project specially ****Mr. Ali Taslimi**** (twitter: @AliTslm ) with comprehensive streamlit open source project(https://github.com/alitslm/cross_chain_monitoring) that provides streamlit functions and tools.
+And also ****Flipside Crypto**** with massive database and last but not least ****MetricsDao**** that is the reason behind this project.
 """)

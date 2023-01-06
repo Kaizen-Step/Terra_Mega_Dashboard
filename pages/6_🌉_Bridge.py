@@ -39,12 +39,39 @@ Distribution_bridged_out_Volume = get_data('Distribution_bridged_out_Volume')
 Distribution_transactions = get_data('Distribution_transactions')
 daily_bridge_detail = get_data('daily_bridge_detail')
 
-st.subheader('Transaction Charts')
+st.subheader('Bridge Charts')
 
 df = bridge_out_daily
 df2 = Distribution_bridged_out_Volume
 df3 = Distribution_transactions
 df4 = daily_bridge_detail
+
+c1, c2 = st.columns(2)
+
+with c1:
+    # Bridge out Transactions based on Blockchains
+    fig = px.pie(df4, values="NUMBER_OF_TRANSACTIONS",
+                 names="BLOCKCHAIN", title='Bridge out Transactions based on Blockchains')
+    fig.update_layout(legend_title=None, legend_y=0.5)
+    fig.update_traces(textinfo='percent+value', textposition='inside')
+    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+with c2:
+
+    # Bridge out users based on Blockchains
+    fig = px.pie(df4, values="BRIDGER",
+                 names="BLOCKCHAIN", title='Bridge out users based on Blockchains')
+    fig.update_layout(legend_title=None, legend_y=0.5)
+    fig.update_traces(textinfo='percent+value', textposition='inside')
+    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+# Bridge out volume based on Blockchains
+fig = px.pie(df4, values="VOLUME",
+             names="BLOCKCHAIN", title='Bridge out volume based on Blockchains')
+fig.update_layout(legend_title=None, legend_y=0.5)
+fig.update_traces(textinfo='percent+value', textposition='inside')
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
 
 # Daily bridged out volume
 fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
@@ -86,12 +113,6 @@ fig.update_layout(showlegend=True, xaxis_title='NUMBER OF Bridge'.title(),
                   yaxis_title=None)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-# Daily bridged out Transactions-(Normalized)
-fig = px.histogram(df4, x="DATE", y="NUMBER_OF_TRANSACTIONS", color="BLOCKCHAIN",
-                   title='Daily bridged out Transactions', barnorm='percent')
-fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title=None, xaxis={
-                  'categoryorder': 'category ascending'})
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 # Daily bridged out Users-(Normalized)
 fig = px.histogram(df4, x="DATE", y="BRIDGER", color="BLOCKCHAIN",
@@ -107,23 +128,9 @@ fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title=None, xaxis={
                   'categoryorder': 'category descending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-# Bridge out Transactions based on Blockchains
-fig = px.pie(df4, values="NUMBER_OF_TRANSACTIONS",
-             names="BLOCKCHAIN", title='Bridge out Transactions based on Blockchains')
-fig.update_layout(legend_title=None, legend_y=0.5)
-fig.update_traces(textinfo='percent+value', textposition='inside')
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-
-# Bridge out users based on Blockchains
-fig = px.pie(df4, values="BRIDGER",
-             names="BLOCKCHAIN", title='Bridge out users based on Blockchains')
-fig.update_layout(legend_title=None, legend_y=0.5)
-fig.update_traces(textinfo='percent+value', textposition='inside')
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-
-# Bridge out volume based on Blockchains
-fig = px.pie(df4, values="VOLUME",
-             names="BLOCKCHAIN", title='Bridge out volume based on Blockchains')
-fig.update_layout(legend_title=None, legend_y=0.5)
-fig.update_traces(textinfo='percent+value', textposition='inside')
+# Daily bridged out Transactions-(Normalized)
+fig = px.histogram(df4, x="DATE", y="NUMBER_OF_TRANSACTIONS", color="BLOCKCHAIN",
+                   title='Daily bridged out Transactions', barnorm='percent')
+fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title=None, xaxis={
+                  'categoryorder': 'category ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)

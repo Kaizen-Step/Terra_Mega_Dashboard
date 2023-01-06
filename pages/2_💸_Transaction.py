@@ -45,7 +45,7 @@ df2 = Luna_daily_tx_vol
 df3 = TX_Num_Overtime
 df4 = Terra_Transactions_Intervals
 
-tab_Overtime, tab_Averages = st.tabs(['**Overtime**', '**Averages**'])
+tab_Overtime, tab_Averages = st.tabs(['**Over Time**', '**Averages**'])
 
 with tab_Overtime:
     interval = st.radio('**Time Interval**',

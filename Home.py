@@ -16,14 +16,11 @@ with c1:
     st.text(" \n")
     st.text(" \n")
     st.text(" \n")
-    st.text(" \n")
-    st.text(" \n")
 
-    st.write("""# Introduction #""")
+    st.write("""# 🌔Terra (blockchain) #""")
 
 st.write("""
- ### Terra (blockchain) ###
-Terra is a blockchain protocol and payment platform used for algorithmic stablecoins. The project was created in 2018 by Terraform Labs, a startup co-founded by Do Kwon and Daniel Shin. It is most known for its Terra stablecoin and the associated Luna reserve asset cryptocurrency.
+Terra is a blockchain protocol and payment platform used for algorithmic stablecoins. The project was created in 2018 by Terraform Labs, a startup co-founded by Do Kwon and Daniel Shin. It is most known for its Terra stablecoin and the associated Luna reserve asset cryptocurrency.  
 In May 2022, the Terra blockchain was temporarily halted after the collapse of the stablecoin TerraUSD (UST) and Luna, in an event that wiped out almost USD45 billion in capitalization within a week. 
 ### Design ###
 Terra is a blockchain that leverages fiat-pegged stablecoins to power a payment system. For consensus the Terra blockchain uses a proof-of-stake codesign. Several stablecoins are built atop the Terra protocol, including TerraUSD, which was the third-largest stablecoin by capitalization before its collapse in May 2022. The Terra blockchain has a fully functional ecosystem of Dapps such as Anchor, Mirror, and Pylon which has utilized the stable-coin infrastructure of Terra. 
@@ -37,8 +34,13 @@ In February 2022, Terra and the Washington Nationals Major League Baseball team 
 The deal was originally proposed to the Terra community by Kwon, referring only to an unnamed "sports franchise in one of the four major American professional sports leagues", and the community agreed to pay USD38.15 million for a five-year-long exclusive partnership. 
 ### Collapse ###
 Beginning on 9 May 2022, the tokens made headlines after UST began to break its peg to the US dollar. Over the next week, the price of UST plunged to 10 cents, while Luna fell to "virtually zero", down from an all-time high of USD119.51. Before the crash, Luna was one of the top ten largest cryptocurrencies on the market. The collapse wiped out almost USD45 billion of market capitalization over the course of a week. 
-On 13 May, Terraform Labs temporarily halted the Terra blockchain in response to the falling prices of UST and Luna. Despite the company's attempts to stabilize UST and Luna via its bitcoin and other cryptocurrency reserves from the Luna Foundation Guard, the 1:1 peg of UST to USD did not materialize. As of 16 May 2022, blockchain analysts claim that the usage of the bitcoin reserves of LFG still remains largely uncertain. 
+On 13 May, Terraform Labs temporarily halted the Terra blockchain in response to the falling prices of UST and Luna.  
+Despite the company's attempts to stabilize UST and Luna via its bitcoin and other cryptocurrency reserves from the Luna Foundation Guard, the 1:1 peg of UST to USD did not materialize. As of 16 May 2022, blockchain analysts claim that the usage of the bitcoin reserves of LFG still remains largely uncertain. 
 On 25 May, a proposal was approved to reissue a new Luna cryptocurrency and to decouple from and abandon the devalued UST stablecoin. The original blockchain is now called Terra Classic (LUNC), and the original Luna token is called Luna Classic. The new Luna coin is called "Terra 2.0" by investors, and has lost valuation in the opening days of being listed on exchanges. 
+
+ 
+
+
 
 
 
@@ -48,8 +50,15 @@ On 25 May, a proposal was approved to reissue a new Luna cryptocurrency and to d
 
 
 st.write("""   
-##### Source #####   """)
+##### Sources #####   """)
 st.write("""    1.https: // www.scoutinsights.co. in /post/luna-and -lunc-coins-destroyed  
         2.https: // www.bloomberg.com/news/articles/2022-05-14  
         3.https: // social.techcrunch.com/2022/05/12/  
               """)
+c1, c2 = st.columns(2)
+with c2:
+    st.info(
+        '**Project Supervisor:  [MetricsDao](https://metricsdao.notion.site/)**', icon="👨🏻‍💼")
+with c1:
+    st.info(
+        '**Data:  [Flipside Crypto](https://flipsidecrypto.xyz/)**', icon="🧠")

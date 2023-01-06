@@ -69,7 +69,8 @@ fig.add_trace(go.Line(x=df["DATE"], y=df['CUM_UNSTAKEE_VOLUME'],
                       name='CUM UNSTAKEE VOLUME'), secondary_y=False)
 fig.add_trace(go.Line(x=df["DATE"], y=df['CUM_SATAKING_NET_VOLUME'],
                       name='CUM SATAKING NET VOLUME'), secondary_y=False)
-fig.update_layout(title_text='Weekly Staking Actions-Volume')
+fig.update_layout(
+    title_text='Weekly Staking Actions-Volume Cumulative Values'.title())
 fig.update_yaxes(title_text='Volume', secondary_y=False)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 

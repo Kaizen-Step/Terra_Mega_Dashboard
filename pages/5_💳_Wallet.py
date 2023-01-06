@@ -25,13 +25,31 @@ with open('style.css')as f:
 def get_data(query):
     if query == 'New_and_Active_Wallets':
         return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/e9e0c78c-0d63-44a8-aab1-4dcc5216891b/data/latest')
+    elif query == 'Richest_users':
+        return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/60f07d44-b578-44ee-9cdb-7372b3029adf/data/latest')
     return None
 
 
 New_and_Active_Wallets = get_data('New_and_Active_Wallets')
+Richest_users = get_data('Richest_users')
 
 st.subheader('Wallet Charts')
+
 df = New_and_Active_Wallets
+df2 = Richest_users
+
+# Top 20 Richest users and Number of Their Transactions
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df2["USER"], y=df2["BALANCE"],
+                     name="BALANCE".title()), secondary_y=False)
+fig.add_trace(go.Line(x=df2["USER"], y=df2["Number of transactions"],
+                      name="Number of transactions"), secondary_y=True)
+fig.update_layout(
+    title_text='Top 20 Richest users and Number of Their Transactions')
+fig.update_yaxes(
+    title_text="BALANCE".title(), secondary_y=False)
+fig.update_yaxes(title_text="Number of transactions", secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 # Total Number of Active Wallets Per Week With Cumulative Value
 fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
